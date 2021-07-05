@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DatenAktualisierung</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+
+            <!-- One of the primary actions on mobile is to call a business - This displays a phone button on mobile only -->
+            <div class="navbar-toggler-right">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse flex-column clearfix" id="navbar">
+
+                <!--<ul class="navbar-nav w-100 justify-content">-->
+                @*<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown link
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown link
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>*@
+
+
+
+                <!--</ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item align-content-start"><a class="nav-link" href="/Home"></a></li>
+                    <li class="nav-item active">
+                        <partial name="_LoginPartial" />
+                        <a style="text-transform: uppercase"></a>
+                    </li>
+                </ul>-->
+
+
+                <ul class="navbar-nav justify-content-start w-100 bg-secondary px-3">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Hangfire">Hangfire</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://teamprojekt.sharepoint.com/sites/IntranetTEAMProjektOutsourcingGmbH">News</a>
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main">
+
+
+
+            @RenderBody()
+            <hr />
+            <div class="container body-content">
+                <footer>
+                    <p>
+                        Kontakt<br>
+                        TEAMProjekt Outsourcing GmbH<br>
+                        Am Prime Parc 4<br>
+                        65479 Raunheim<br>
+                        kontakt@teamprojekt-outsourcing.de
+                    </p>
+                    &copy; 2021 - DatenAktualisieren - <a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
+                </footer>
+            </div>
+
+        </main>
+
+    </div>
+    @RenderSection("Scripts", required: false)
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script src="~/bundles/jquery.js" type="text/javascript"></script>
+</body>
+</html>
