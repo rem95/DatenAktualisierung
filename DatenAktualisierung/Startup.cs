@@ -20,7 +20,7 @@ using Hangfire;
 using Hangfire.MemoryStorage;
 using DatenAktualisierung.Controllers;
 using DatenAktualisierung.Models;
-using DatenAktualisierung.Data;
+
 
 namespace DatenAktualisierung
 {
@@ -36,13 +36,14 @@ namespace DatenAktualisierung
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddHangfire(job => job.SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
             .UseSimpleAssemblyNameTypeSerializer()
             .UseDefaultTypeSerializer()
             .UseMemoryStorage());
 
             services.AddHangfireServer();
-
+           
             //services.AddControllers();
 
             services.AddAuthentication(AzureADDefaults.AuthenticationScheme)
@@ -61,8 +62,8 @@ namespace DatenAktualisierung
             services.AddDbContext<MitarbeiterContext>(options =>
                    options.UseSqlServer(Configuration.GetConnectionString("MitarbeiterContext")), ServiceLifetime.Transient);
 
-            services.AddDbContext<KrankenquoteContext>(options =>
-                   options.UseSqlServer(Configuration.GetConnectionString("KrankenquoteContext")), ServiceLifetime.Transient);
+            services.AddTransient<HangfireErinnerung>();
+            services.AddMvc().AddControllersAsServices();
 
 
 
@@ -104,7 +105,7 @@ namespace DatenAktualisierung
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             });
             app.UseHangfireDashboard();
-
+            //recurringJobManager.AddOrUpdate("emailVersenden", () => serviceProvider.GetService<IHangfireErinnerung>().methodeAufrufenAsync(), Cron.Minutely());
         }
     }
 }

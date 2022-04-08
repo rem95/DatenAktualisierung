@@ -14,15 +14,15 @@ namespace DatenAktualisierung.Models
         {
         }
 
-        public DbSet<DatenAktualisierung.Models.Betrieb> Betrieb { get; set; }
+        //public DbSet<DatenAktualisierung.Models.Betrieb> Betrieb { get; set; }
 
-        public DbSet<DatenAktualisierung.Models.Bereich> Bereich { get; set; }
+        //public DbSet<DatenAktualisierung.Models.Bereich> Bereich { get; set; }
 
         public DbSet<DatenAktualisierung.Models.Person> Person { get; set; }
 
-        public DbSet<DatenAktualisierung.Models.Stammkostenstelle> Stammkostenstelle { get; set; }
+        //public DbSet<DatenAktualisierung.Models.Stammkostenstelle> Stammkostenstelle { get; set; }
 
-        public DbSet<DatenAktualisierung.Models.Kunde> Kunde { get; set; }
+        //public DbSet<DatenAktualisierung.Models.Kunde> Kunde { get; set; }
 
 
     }
